@@ -1,0 +1,10 @@
+Build target 'LoraNode-433-lora'
+compiling timer_handles.c...
+..\source\apps\timer_handles.c(97): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+        sprintf(arr[i],"%.2f",light[i]);
+..\source\apps\timer_handles.c: 1 warning, 0 errors
+linking...
+Program Size: Code=18864 RO-data=880 RW-data=100 ZI-data=2412  
+FromELF: creating hex file...
+".\Objects\LoraNode.axf" - 0 Error(s), 1 Warning(s).
+Build Time Elapsed:  00:00:02

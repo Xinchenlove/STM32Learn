@@ -1,0 +1,10 @@
+void OLED_DrawPoint(unsigned char x,unsigned char y)
+{
+       static unsigned char data1;
+       data1=(unsigned char)(0x01<<((y%8)));
+       OLED_Set_Pos(x, (unsigned char)(y >> 3));
+       OLED_WR_Byte((unsigned char)(0xb0 + (y >> 3)),0);
+       OLED_WR_Byte((unsigned char)(((x & 0xf0) >> 4) | 0x10),0);
+       OLED_WR_Byte((unsigned char)((x & 0x0f) | 0x00),0);
+       OLED_WR_Byte(data1,1);
+}

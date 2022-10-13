@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "adc_reader.h": "c",
+        "hal_oled.h": "c",
+        "key_scaner.h": "c",
+        "timer_handles.h": "c"
+    }
+}
