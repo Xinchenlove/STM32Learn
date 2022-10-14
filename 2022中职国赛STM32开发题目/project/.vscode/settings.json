@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "oledfont.h": "c",
+        "adc_reader.h": "c",
+        "hal_oled.h": "c"
+    }
+}

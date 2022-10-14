@@ -1,0 +1,15 @@
+Build target 'LoraNode-433-lora'
+compiling main.c...
+..\source\apps\main.c(202): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+              sprintf(arr,"%02d:%02d:%02d",H,M,S);
+..\source\apps\main.c(238): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+              OLED_ShowCHineseArray(48,6,BQ[0]);OLED_ShowCHineseArray(64,6,BQ[1]);
+..\source\apps\main.c(238): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+              OLED_ShowCHineseArray(48,6,BQ[0]);OLED_ShowCHineseArray(64,6,BQ[1]);
+..\source\apps\main.c(244): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+              sprintf(arr,":%.2fLux",L);
+..\source\apps\main.c: 4 warnings, 0 errors
+linking...
+Program Size: Code=18940 RO-data=5176 RW-data=880 ZI-data=2336  
+FromELF: creating hex file...
+".\Objects\LoraNode.axf" - 0 Error(s), 4 Warning(s).
