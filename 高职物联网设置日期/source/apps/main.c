@@ -11,11 +11,11 @@
 #include "timer_handles.h"
 
 #include "flash.h"
-
+#include "usart1-board.h"
 
 #define ADDRESS1 0x800D000
 
-
+void USART1_SendStr(uint8_t *Data, uint8_t length);
 
 
 uint8_t DQRQ[][32] = {
@@ -67,9 +67,9 @@ uint8_t JT[] = {
 };
 
 uint8_t Page = 1;
-uint8_t  A = 1;
+uint8_t  A = 1,arr[10];
 
-uint32_t DATE[3] = {2022,10,15};
+ uint32_t DATE[3] ;
 
 /**********************************************************************************************
 *函数：void Init( void )
@@ -245,6 +245,65 @@ void ShowPage2(){
  
 }
 
+uint8_t T[] = {0xFB,0x00,0xFE};
+uint8_t F[] = {0xFB,0x01,0xFE};
+
+void UASRT_READ(){
+
+    if(USART1_RX_BUF[0] == 0xFB){
+        
+            if(USART1_RX_BUF[1] == 0x01&&USART1_RX_BUF[4] == 0xFE){
+                sprintf(arr,"%02x%02x",USART1_RX_BUF[2],USART1_RX_BUF[3]);
+                DATE[0] = (arr[0]-'0')*1000+(arr[1]-'0')*100+(arr[2]-'0')*10+arr[3]-'0';
+                //DATE[0] = USART1_RX_BUF[2] * 16 *16 +USART1_RX_BUF[3];
+                STMFLASH_Write(ADDRESS1,DATE,3);
+                USART1_SendStr(T,3);
+
+            }
+            
+       else     if(USART1_RX_BUF[1] == 0x02&&USART1_RX_BUF[3] == 0xFE){
+                sprintf(arr,"%02x",USART1_RX_BUF[2]);
+                DATE[1] = (arr[0]-'0')*10+(arr[1]-'0');
+                //DATE[1] = USART1_RX_BUF[2]; //输入16进制设置时间
+                STMFLASH_Write(ADDRESS1,DATE,3);
+                USART1_SendStr(T,3);
+            }
+            
+       else    if(USART1_RX_BUF[1] == 0x03&&USART1_RX_BUF[3] == 0xFE){
+                sprintf(arr,"%02x",USART1_RX_BUF[2]);
+                DATE[2] = (arr[0]-'0')*10+(arr[1]-'0');
+                //DATE[2] = USART1_RX_BUF[2];  //输入16进制设置时间
+                STMFLASH_Write(ADDRESS1,DATE,3);
+                USART1_SendStr(T,3);
+            }
+            else 
+                USART1_SendStr(F,3);
+             
+             
+             
+            STMFLASH_Read(ADDRESS1,DATE,3);
+    
+
+            OLED_Clear();
+            
+        
+        }
+USART1_ReceiveClr();
+            if(Page == 1) 
+            ShowPage1();
+        
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /**
@@ -253,20 +312,32 @@ void ShowPage2(){
 int main( void )
 {
     Init();
+    USART1_Init(115200); //波特率115200
     OLED_Init();
     OLED_Clear();
+      
+
    
     STMFLASH_Read(ADDRESS1,DATE,3);
     
     ShowPage1();
+
+
+
+
     while( 1 )
     {
+
+          UASRT_READ();
         KeyDownHandler();
         if(Page != 1){
 
             ShowPage2();
 
         }
+
+        
+				
 
 			
     }

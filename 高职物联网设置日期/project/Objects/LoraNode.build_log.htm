@@ -21,7 +21,7 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.14.0_KEIL
 Dialog DLL:      TCM.DLL V1.14.4.0
  
 <h2>Project:</h2>
-d:\高职物联网设置日期\project\LoraNode.uvprojx
+d:\github\STM32Learn\高职物联网设置日期\project\LoraNode.uvprojx
 Project File Date:  05/13/2021
 
 <h2>Output:</h2>
@@ -47,14 +47,18 @@ compiling main.c...
       OLED_ShowCHineseArray(0,4,NYR[1]);OLED_ShowChar(16,4,':');OLED_ShowNum(32,4,DATE[1],2,16);
 ..\source\apps\main.c(239): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
       OLED_ShowCHineseArray(0,6,NYR[2]);OLED_ShowChar(16,6,':');OLED_ShowNum(32,6,DATE[2],2,16);
-..\source\apps\main.c: 10 warnings, 0 errors
+..\source\apps\main.c(265): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                  sprintf(arr,"%02x",USART1_RX_BUF[2]);
+..\source\apps\main.c(273): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                  sprintf(arr,"%02x",USART1_RX_BUF[2]);
+..\source\apps\main.c: 12 warnings, 0 errors
 linking...
-Program Size: Code=15588 RO-data=5176 RW-data=360 ZI-data=2240  
+Program Size: Code=19004 RO-data=5184 RW-data=356 ZI-data=2508  
 FromELF: creating hex file...
-".\Objects\LoraNode.axf" - 0 Error(s), 10 Warning(s).
+".\Objects\LoraNode.axf" - 0 Error(s), 12 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
-  d:\高职物联网设置日期\project\RTE
+  d:\github\STM32Learn\高职物联网设置日期\project\RTE
   C:\Keil_v5\ARM\PACK\Keil\STM32L1xx_DFP\1.2.0
 
 <h2>Collection of Component Files used:</h2>

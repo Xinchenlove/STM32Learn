@@ -68,3 +68,4 @@
 .\objects\main.o: ..\source\peripherals\hal_key\hal_key.h
 .\objects\main.o: ..\source\apps\timer_handles.h
 .\objects\main.o: ..\source\system\flash.h
+.\objects\main.o: ..\source\boards\hardware\usart1-board.h

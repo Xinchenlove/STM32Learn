@@ -67,3 +67,5 @@
 .\objects\timer_handles.o: ..\source\boards\hardware\board.h
 .\objects\timer_handles.o: ..\source\apps\user_define.h
 .\objects\timer_handles.o: ..\source\apps\common\key_scaner.h
+.\objects\timer_handles.o: ..\source\boards\hardware\usart1-board.h
+.\objects\timer_handles.o: ..\source\system\flash.h

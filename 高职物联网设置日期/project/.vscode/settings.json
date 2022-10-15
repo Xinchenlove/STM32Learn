@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "sx1276.h": "c",
-        "ns_radio.h": "c"
+        "ns_radio.h": "c",
+        "uart.h": "c",
+        "uart-board.h": "c",
+        "usart1-board.h": "c"
     }
 }

@@ -20,8 +20,12 @@ compiling main.c...
       OLED_ShowCHineseArray(0,4,NYR[1]);OLED_ShowChar(16,4,':');OLED_ShowNum(32,4,DATE[1],2,16);
 ..\source\apps\main.c(239): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
       OLED_ShowCHineseArray(0,6,NYR[2]);OLED_ShowChar(16,6,':');OLED_ShowNum(32,6,DATE[2],2,16);
-..\source\apps\main.c: 10 warnings, 0 errors
+..\source\apps\main.c(265): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                  sprintf(arr,"%02x",USART1_RX_BUF[2]);
+..\source\apps\main.c(273): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                  sprintf(arr,"%02x",USART1_RX_BUF[2]);
+..\source\apps\main.c: 12 warnings, 0 errors
 linking...
-Program Size: Code=15588 RO-data=5176 RW-data=360 ZI-data=2240  
+Program Size: Code=19004 RO-data=5184 RW-data=356 ZI-data=2508  
 FromELF: creating hex file...
-".\Objects\LoraNode.axf" - 0 Error(s), 10 Warning(s).
+".\Objects\LoraNode.axf" - 0 Error(s), 12 Warning(s).
