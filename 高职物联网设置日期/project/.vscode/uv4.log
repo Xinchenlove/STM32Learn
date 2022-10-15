@@ -1,0 +1,27 @@
+Build target 'LoraNode-433-lora'
+compiling main.c...
+..\source\apps\main.c(222): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+      OLED_ShowCHineseArray(0,0,DQRQ[0]);
+..\source\apps\main.c(223): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+      OLED_ShowCHineseArray(16,0,DQRQ[1]);
+..\source\apps\main.c(224): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+      OLED_ShowCHineseArray(32,0,DQRQ[2]);
+..\source\apps\main.c(225): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+      OLED_ShowCHineseArray(48,0,DQRQ[3]);
+..\source\apps\main.c(228): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+      OLED_ShowNum(0,4,DATE[0],4,16);OLED_ShowCHineseArray(40,4,NYR[0]);
+..\source\apps\main.c(229): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+      OLED_ShowNum(0,6,DATE[1],2,16);OLED_ShowCHineseArray(24,6,NYR[1]);
+..\source\apps\main.c(230): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+      OLED_ShowNum(48,6,DATE[2],2,16);OLED_ShowCHineseArray(72,6,NYR[2]);
+..\source\apps\main.c(237): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+      OLED_ShowCHineseArray(0,2,NYR[0]);OLED_ShowChar(16,2,':');OLED_ShowNum(32,2,DATE[0],4,16);
+..\source\apps\main.c(238): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+      OLED_ShowCHineseArray(0,4,NYR[1]);OLED_ShowChar(16,4,':');OLED_ShowNum(32,4,DATE[1],2,16);
+..\source\apps\main.c(239): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
+      OLED_ShowCHineseArray(0,6,NYR[2]);OLED_ShowChar(16,6,':');OLED_ShowNum(32,6,DATE[2],2,16);
+..\source\apps\main.c: 10 warnings, 0 errors
+linking...
+Program Size: Code=15588 RO-data=5176 RW-data=360 ZI-data=2240  
+FromELF: creating hex file...
+".\Objects\LoraNode.axf" - 0 Error(s), 10 Warning(s).
