@@ -14,16 +14,16 @@
 #include "NS_Radio.h"
 
 uint8_t arr[10];
-uint8_t Z = 0,S = 0;
-uint8_t state = 0x00;
+uint8_t Z = 0,S = 0;//指针位置
+uint8_t state = 0x00;//发送LED的状态
 
-uint8_t SE[] = {
+uint8_t SE[] = {//三角标志
 /*--  ???????:C:\Users\Newland\Desktop\??????.bmp  --*/
 /*--  ??x??=16x16  --*/
 0x00,0x00,0x80,0xE0,0xE0,0xFC,0xFE,0xFE,0xFE,0xFC,0xF0,0xE0,0x80,0x00,0x00,0x00,
 0x30,0x7C,0x7F,0x7F,0x7F,0x7F,0x7F,0x7F,0x7F,0x7F,0x7F,0x7F,0x7F,0x7E,0x78,0x00,
 };
-uint8_t KG[][32]= {
+uint8_t KG[][32]= {//开关
 /*--  ??:  ?  --*/
 /*--  ??12;  ??????????:?x?=16x16   --*/
 0x80,0x82,0x82,0x82,0xFE,0x82,0x82,0x82,0x82,0x82,0xFE,0x82,0x82,0x82,0x80,0x00,
@@ -68,11 +68,13 @@ void Init() {
 *特殊说明：无
 **********************************************************************************************/
 void KeyDownHandler(void) {
-	if(isKey2Pressed()){
-		Z++;
+	if(isKey2Pressed()){// LED1 开 → LED2 关 → LED2 开 → LED1 关 → LED1开
+		Z+=3;
 		resetKey2();
 		OLED_Clear();
-		if(Z >= 2)Z = 0;
+			if(Z == 6)Z = 2;
+        if(Z == 5)Z = 1;
+        if(Z == 4)Z = 0;
 		
 	}
 	if(isKey3Pressed()){
